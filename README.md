@@ -11,11 +11,11 @@ Criado um template de painel com menu lateral e um navbar simples, leve e facil 
 
 Para utilizar o projeto é necessário ter o node.js instalado na maquina, juntamente com o angular/cli.
 
-No diretório principal do projeto onde se encontra o arquico package.json execute o comando:
+No diretório principal do projeto onde se encontra o arquivo package.json execute o comando:
 
 `npm install`
 
-Após a instalação do projeto execute o seguinte comando:
+Após a instalação das dependências do projeto execute o seguinte comando:
 
 `ng serve --open`
 
