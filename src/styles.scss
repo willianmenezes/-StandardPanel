@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+@import './customize-bootstrap.scss';
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+html, body {
+    font-family: 'Open Sans', sans-serif;
+}
+
