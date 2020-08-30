@@ -1,0 +1,54 @@
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3>Logo empresa</h3>
+        </div>
+
+        <ul class="list-unstyled components">
+            <li class="active">
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <fa-icon [icon]="icons.faFolderOpen" class="mr-3"></fa-icon>Home
+                </a>
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li>
+                        <a href="#">Home 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Home 2</a>
+                    </li>
+                    <li>
+                        <a href="#">Home 3</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <fa-icon [icon]="icons.faFolderOpen" class="mr-3"></fa-icon>About
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content">
+
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light fixed shadow ">
+            <button id="sidebarCollapse" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+        <!-- navbar -->
+
+        <main class="p-3">
+            <button class="btn btn-primary btn-block">Botão</button>
+            <button class="btn btn-success btn-block">Botão</button>
+            <button class="btn btn-info btn-block">Botão</button>
+            <button class="btn btn-warning btn-block">Botão</button>
+            <button class="btn btn-danger btn-block">Botão</button>
+        </main>
+
+    </div>
+</div>
