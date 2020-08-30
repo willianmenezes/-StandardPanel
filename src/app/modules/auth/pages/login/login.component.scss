@@ -1,0 +1,7 @@
+@import '../../../../../customize-bootstrap.scss';
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+.altura-max {
+    height: 100vh ;
+    background-color: theme-color("primary");
+}

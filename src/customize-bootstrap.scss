@@ -8,3 +8,7 @@ $theme-colors: (
 );
 
 $enable-rounded: false;
+
+.card {
+  border-radius: 0;
+}
