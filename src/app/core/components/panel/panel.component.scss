@@ -91,8 +91,13 @@ ul ul a {
     border: 0 !important;
 }
 
+.navbar-toggler-icon{
+    display: block;
+}
+
 /* Media queries */
 @media (max-width: 768px) {
+   
     #sidebar {
         margin-left: -250px;
     }
