@@ -45,7 +45,6 @@ a:focus {
 
 #sidebar ul li a {
     padding: 10px;
-    font-size: 1.1em;
     display: block;
 }
 
@@ -92,7 +91,7 @@ ul ul a {
 }
 
 .navbar-toggler-icon{
-    display: block;
+    display: block !important;
 }
 
 /* Media queries */
