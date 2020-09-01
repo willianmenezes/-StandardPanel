@@ -16,6 +16,8 @@ export class PanelComponent implements OnInit {
         faFolderOpen
     }
 
+    isVisible = true;
+
     ngOnInit(): void {
         $(document).ready(function () {
             $('#sidebarCollapse').on('click', function () {
@@ -23,6 +25,6 @@ export class PanelComponent implements OnInit {
             });
         });
     }
-    
+
     title = 'basePanel';
 }

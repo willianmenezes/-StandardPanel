@@ -1,6 +1,8 @@
 @import '../../../../customize-bootstrap.scss';
 @import 'node_modules/bootstrap/scss/bootstrap';
 
+$color-primary: theme-color("primary");
+
 a,
 a:hover,
 a:focus {
@@ -19,7 +21,7 @@ a:focus {
 #sidebar {
     min-width: 250px;
     max-width: 250px;
-    background: theme-color("primary");
+    background: $color-primary;
     color: #fff;
     transition: all 0.3s;
 }
@@ -27,10 +29,9 @@ a:focus {
 #sidebar.active {
     margin-left: -250px;
 }
-
 #sidebar .sidebar-header {
     padding: 20px;
-    background: theme-color("primary");;
+    background: $color-primary;
 }
 
 #sidebar ul.components {
@@ -49,14 +50,14 @@ a:focus {
 }
 
 #sidebar ul li a:hover {
-    color: theme-color("primary");;
+    color: $color-primary;
     background: #fff;
 }
 
 #sidebar ul li.active>a,
 a[aria-expanded="true"] {
     color: #fff;
-    background: theme-color("primary");;
+    background: $color-primary;
 }
 
 a[data-toggle="collapse"] {
@@ -74,7 +75,7 @@ a[data-toggle="collapse"] {
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: theme-color("primary");;
+    background: theme-color("primary");
 }
 
 /* Content style */
