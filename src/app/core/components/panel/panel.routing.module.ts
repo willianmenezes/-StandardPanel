@@ -1,12 +1,26 @@
-import { NgModule } from '@angular/core';
+import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
 
 import { PanelComponent } from './panel.component'
+import { AuthGuard } from '../../guards/auth.guard'
+import { TreinamentoComponent } from '../../../modules/treinamento/pages/treinamento.component'
 
 const routes: Routes = [
     {
         path: '',
-        component: PanelComponent
+        component: PanelComponent,
+        canActivate: [AuthGuard],
+        children: [
+            {
+                path: '',
+                pathMatch: 'full',
+                redirectTo: 'treinamentos'
+            },
+            {
+                path: 'treinamentos',
+                component: TreinamentoComponent
+            }
+        ]
     }
 ]
 

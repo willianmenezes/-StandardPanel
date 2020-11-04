@@ -1,0 +1,7 @@
+@import '../../../customize-bootstrap.scss';
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+.altura-max {
+    height: 100vh ;
+    background-image: linear-gradient(to right top, #9165d6, #7b50bf, #663ba9, #512793, #3b117e);
+}

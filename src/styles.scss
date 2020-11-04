@@ -1,11 +1,327 @@
 /* You can add global styles to this file, and also import other style files */
-@import './customize-bootstrap.scss';
-@import '../node_modules/bootstrap/scss/bootstrap';
-@import '~normalize.css';
+@import "./customize-bootstrap.scss";
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "~normalize.css";
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+$color-danger: theme-color("danger");
+$color-success: theme-color("success");
+$color-primary: theme-color("primary");
+$color-secondary: theme-color("secondary");
+$color-info: theme-color("info");
+$color-warning: theme-color("warning");
+$color-light: theme-color("light");
+$color-dark: theme-color("dark");
 
-html, body {
-    font-family: 'Open Sans', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+
+html,
+body {
+    font-family: "Nunito", sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+.ngx-pagination .current {
+    background-color: $color-primary !important;
+}
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+    display: block;
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+input,
+button,
+select,
+optgroup,
+textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+h1,
+.h1 {
+    font-size: 2.5rem;
+}
+
+h2,
+.h2 {
+    font-size: 2rem;
+}
+
+h3,
+.h3 {
+    font-size: 1.75rem;
+}
+
+h4,
+.h4 {
+    font-size: 1.5rem;
+}
+
+h5,
+.h5 {
+    font-size: 1.25rem;
+}
+
+h6,
+.h6 {
+    font-size: 1rem;
+}
+
+// borders
+.border-left-primary {
+    border-left: 0.25rem solid $color-primary !important;
+}
+
+.border-bottom-primary {
+    border-bottom: 0.25rem solid $color-primary !important;
+}
+
+.border-left-secondary {
+    border-left: 0.25rem solid $secondary !important;
+}
+
+.border-bottom-secondary {
+    border-bottom: 0.25rem solid $secondary !important;
+}
+
+.border-left-success {
+    border-left: 0.25rem solid $color-success !important;
+}
+
+.border-bottom-success {
+    border-bottom: 0.25rem solid $color-success !important;
+}
+
+.border-left-info {
+    border-left: 0.25rem solid $color-info !important;
+}
+
+.border-bottom-info {
+    border-bottom: 0.25rem solid $color-info !important;
+}
+
+.border-left-warning {
+    border-left: 0.25rem solid $color-warning !important;
+}
+
+.border-bottom-warning {
+    border-bottom: 0.25rem solid $color-warning !important;
+}
+
+.border-left-danger {
+    border-left: 0.25rem solid $color-danger !important;
+}
+
+.border-bottom-danger {
+    border-bottom: 0.25rem solid $color-danger !important;
+}
+
+.border-left-light {
+    border-left: 0.25rem solid $color-light !important;
+}
+
+.border-bottom-light {
+    border-bottom: 0.25rem solid $color-light !important;
+}
+
+.border-left-dark {
+    border-left: 0.25rem solid $color-dark !important;
+}
+
+.border-bottom-dark {
+    border-bottom: 0.25rem solid $color-dark !important;
+}
+
+//cards
+.card-header {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: #f8f9fc;
+    border-bottom: 1px solid #e3e6f0;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid #e3e6f0;
+    border-radius: 0.35rem;
+}
+
+//botao upload de imagem
+.button-wrapper {
+    position: relative;
+    text-align: center;
+    cursor: pointer !important;
+}
+
+.button-wrapper span {
+    cursor: pointer !important;
+}
+
+.button-wrapper span.label {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    background: $color-dark;
+    cursor: pointer;
+    color: #fff;
+    padding: 10px 0;
+    text-transform: uppercase;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+#upload {
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+    border-radius: 5px;
+}
+//botao upload de imagem
+
+/* //inputs validos */
+input.ng-valid.ng-dirty.ng-touched {
+    border-color: $color-success;
+    box-shadow: none;
+}
+
+/* input.ng-pristine.ng-valid.ng-untouched{
+    border-color: #51de4c;
+    box-shadow: none;
+  } */
+
+input.ng-pristine.ng-valid.ng-touched {
+    border-color: $color-success;
+    box-shadow: none;
+}
+/* //inputs validos */
+
+/* //inputs inválidos */
+input.ng-invalid.ng-dirty.ng-touched {
+    border-color: $color-danger;
+    box-shadow: none;
+}
+
+input.ng-pristine.ng-invalid.ng-touched {
+    border-color: $color-danger;
+    box-shadow: none;
+}
+/* //inputs inválidos */
+
+/* //selects validos */
+select.ng-valid.ng-dirty.ng-touched {
+    border-color: $color-success;
+    box-shadow: none;
+}
+/* //selects validos */
+
+/* //selects inválidos  */
+select.ng-dirty.ng-invalid.ng-touched {
+    border-color: $color-danger;
+    box-shadow: none;
+}
+
+select.ng-pristine.ng-invalid.ng-touched {
+    border-color: $color-danger;
+    box-shadow: none;
+}
+/* //selects inválidos  */
+
+/* // textarea invalidos */
+textarea.ng-dirty.ng-invalid.ng-touched {
+    border-color: $color-danger;
+    box-shadow: none;
+}
+
+textarea.ng-pristine.ng-invalid.ng-touched {
+    border-color: $color-danger;
+    box-shadow: none;
+}
+/* // textarea invalidos */
+
+// Inicio Textarea validos
+textarea.ng-valid.ng-dirty.ng-touched {
+    border-color: $color-success;
+    box-shadow: none;
+}
+
+textarea.ng-pristine.ng-valid.ng-untouched {
+    border-color: $color-success;
+    box-shadow: none;
+}
+// Fim Textarea validos
+
+/* inicio configurações no alertfy*/
+.alertify-notifier {
+    color: white !important;
+    font-weight: 500;
+}
+.alertify-notifier .ajs-message {
+    border-radius: 8px !important;
+}
+.alertify-notifier .ajs-message.ajs-success {
+    background: $color-success;
+}
+.alertify-notifier .ajs-message.ajs-error {
+    background: $color-danger;
+}
+.alertify-notifier .ajs-message.ajs-warning {
+    background: #deb04c !important;
+}
+/* final configurações no alertfy*/

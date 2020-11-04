@@ -1,7 +1,26 @@
-@import '../../../../../customize-bootstrap.scss';
-@import 'node_modules/bootstrap/scss/bootstrap';
+@import "../../../../../customize-bootstrap.scss";
+@import "node_modules/bootstrap/scss/bootstrap";
 
 .altura-max {
-    height: 100vh ;
-    background-color: theme-color("primary");
+    height: 100vh;
+    background-image: linear-gradient(to right top, #9165d6, #7b50bf, #663ba9, #512793, #3b117e);
+}
+
+.card-img-top {
+    max-width: 250px;
+    max-height: 200px;
+    width: auto;
+    height: auto;
+}
+
+.card-body {
+    padding: 0 30px;
+}
+
+form {
+    padding: 0 40px 40px;
+}
+
+.input--spacing {
+    margin-top: 30px;
 }

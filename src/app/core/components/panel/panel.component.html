@@ -1,38 +1,46 @@
 <div class="wrapper">
     <!-- Sidebar  -->
     <nav id="sidebar">
-        <div class="sidebar-header">
-            <h3>Logo empresa</h3>
-        </div>
-
+        <a [routerLink]="['/panel']" class="brand--logo">
+            <div class="sidebar-header d-flex justify-content-center align-items-center p-0">
+                <h3 class="pt-2">
+                    <fa-icon [icon]="icons.faStore"></fa-icon>
+                </h3>
+            </div>
+        </a>
+        <hr class="mb-3">
         <ul class="list-unstyled components">
-            <li class="active">
-                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                    <fa-icon [icon]="icons.faFolderOpen" class="mr-3"></fa-icon>Pagina inicial
+            <li class="">
+                <a class="margin-left" [routerLink]="['treinamentos']" (click)="clickMenu()">
+                    <fa-icon [icon]="icons.faUser" class="mr-3 p-1"></fa-icon>Treinamentos
                 </a>
-                <ul class="collapse list-unstyled" id="homeSubmenu">
-                    <li>
-                        <a href="#">
-                            <fa-icon [icon]="icons.faFolderOpen" class="mr-3"></fa-icon>Pagina inicial 1
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <fa-icon [icon]="icons.faFolderOpen" class="mr-3"></fa-icon>Pagina inicial 2
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <fa-icon [icon]="icons.faFolderOpen" class="mr-3"></fa-icon>Pagina inicial 3
+            </li>
+            <li class="">
+                <a class="margin-left" [routerLink]="['registrar-loja']" (click)="clickMenu()">
+                    <fa-icon [icon]="icons.faStore" class="mr-3"></fa-icon>Lojas
+                </a>
+            </li>
+            <!-- menu toggle <li class="">
+                <a class="margin-left accordion-toggle collapsed toggle-switch" data-toggle="collapse"
+                    href="#submenu-2">
+                    <fa-icon [icon]="icons.faStore" class="mr-3"></fa-icon>
+                    <span class="sidebar-title">Lojas</span>
+                </a>
+                <ul id="submenu-2" class="panel-collapse collapse panel-switch" role="menu">
+                    <li class="list-unstyled">
+                        <a [routerLink]="['registrar-loja']" class="">
+                            <fa-icon [icon]="icons.faPlusSquare" class="mr-3"></fa-icon>Registrar loja
                         </a>
                     </li>
                 </ul>
-            </li>
+            </li> -->
+            <!-- sair -->
             <li>
-                <a href="#">
-                    <fa-icon [icon]="icons.faFolderOpen" class="mr-3"></fa-icon>Sobre
+                <a class="margin-left" (click)="logout()" class="logout">
+                    <fa-icon [icon]="icons.faSignOutAlt" class="mr-3"></fa-icon>Sair
                 </a>
             </li>
+
         </ul>
     </nav>
 
@@ -41,14 +49,18 @@
 
         <!-- navbar -->
         <nav class="navbar navbar-expand-lg navbar-light fixed shadow d-flex justify-content-bettwen">
-            <button id="sidebarCollapse" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <svg id="sidebarCollapse" class="ham ham2" viewBox="0 0 100 100" width="40"
+                onclick="this.classList.toggle('active')">
+                <path class="line top"
+                    d="m 70,33 h -40 c -6.5909,0 -7.763966,-4.501509 -7.763966,-7.511428 0,-4.721448 3.376452,-9.583771 13.876919,-9.583771 14.786182,0 11.409257,14.896182 9.596449,21.970818 -1.812808,7.074636 -15.709402,12.124381 -15.709402,12.124381" />
+                <path class="line middle" d="m 30,50 h 40" />
+                <path class="line bottom"
+                    d="m 70,67 h -40 c -6.5909,0 -7.763966,4.501509 -7.763966,7.511428 0,4.721448 3.376452,9.583771 13.876919,9.583771 14.786182,0 11.409257,-14.896182 9.596449,-21.970818 -1.812808,-7.074636 -15.709402,-12.124381 -15.709402,-12.124381" />
+            </svg>
         </nav>
         <!-- navbar -->
 
-        <main class="p-3">
+        <main class="p-3 container-panel">
             <router-outlet></router-outlet>
         </main>
 

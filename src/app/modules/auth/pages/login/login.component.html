@@ -1,22 +1,50 @@
 <div class="row altura-max d-flex align-items-center m-0 p-0">
     <div class="col-12 m-0 p-0">
         <div class="row d-flex justify-content-center m-0 p-0">
-            <div class="col-12 col-sm-10 col-md-8 col-lg-4 col-xl-3 m-0 p-0">
-                <div class="card m-2 shadow">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Login</h5>
-                        <form>
-                            <div class="form-group">
-                                <label for="inputEmail" class="small">E-mail:</label>
-                                <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp"
-                                    placeholder="E-mail">
-                            </div>
-                            <div class="form-group">
-                                <label for="inputPassword" class="small">Senha:</label>
-                                <input type="password" class="form-control" id="inputPassword" placeholder="Senha">
-                            </div>
-                            <button link="/panel" class="btn btn-primary btn-block btn-dark shadow" type="button" (click)="login()">Entrar</button>
-                        </form>
+            <div class="col-12 col-sm-10 col-md-8 col-lg-4 col-xl-4 m-0 p-0">
+                <div class="card m-2 shadow-lg">
+                    <div class="card-body m-0 p-0 pt-3">
+                        <ng-container *ngIf="!esqueciSenha">
+                            <form [formGroup]="formLogin" (submit)="login()">
+                                <div class="form-group input--spacing">
+                                    <label for="inputEmail" class="small">E-mail:</label>
+                                    <input formControlName="email" type="email" class="form-control" id="inputEmail"
+                                        aria-describedby="emailHelp" placeholder="E-mail">
+                                </div>
+                                <div class="form-group input--spacing">
+                                    <label for="inputPassword" class="small">Senha:</label>
+                                    <input formControlName="password" type="password" class="form-control"
+                                        id="inputPassword" placeholder="Senha">
+                                </div>
+                                <button [disabled]="!formLogin.valid"
+                                    class="btn btn-primary btn-block shadow input--spacing" type="button"
+                                    (click)="login()">Entrar</button>
+                            </form>
+
+                            <p class="text-center">
+
+                                <button class="btn btn-link" (click)="setEsqueciSenha()">
+                                    Esqueci a senha</button>
+                            </p>
+                        </ng-container>
+
+                        <ng-container *ngIf="esqueciSenha">
+                            <form [formGroup]="formEsqueciSenha" (submit)="login()">
+                                <div class="form-group">
+                                    <label for="inputEmail" class="small">E-mail:</label>
+                                    <input formControlName="email" type="email" class="form-control" id="inputEmail"
+                                        aria-describedby="emailHelp" placeholder="E-mail">
+                                </div>
+                                <button [disabled]="!formLogin.valid"
+                                    class="btn btn-primary btn-block shadow input--spacing" type="button"
+                                    (click)="login()">Entrar</button>
+                            </form>
+                            <p class="text-center">
+                                Voltar para o <a [routerLink]="['/login']" (click)="setEsqueciSenha()" routerLinkActive="router-link-active">
+                                    Login</a>
+                        </ng-container>
+
+
                     </div>
                 </div>
             </div>

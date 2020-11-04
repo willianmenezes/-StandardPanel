@@ -1,0 +1,57 @@
+<div class="table-responsive">
+
+    <table class="table table-hover table-striped">
+        <thead class="">
+            <tr>
+                <th scope="col">#</th>
+                <th *ngFor="let label of tableLabel" scope="col">{{label.name}}</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of tableData.data | paginate: configPage; index as i">
+                <th scope="row">{{i + 1}}</th>
+                <ng-container *ngFor="let label of tableLabel; index as j">
+                    <ng-container *ngIf="label.isBoolean === true">
+                        <td *ngIf="item[tableLabel[j].value] === true">Sim</td>
+                        <td *ngIf="item[tableLabel[j].value] === false">Não</td>
+                    </ng-container>
+
+                    <ng-container *ngIf="label.isBoolean === false">
+                        <td>{{item[tableLabel[j].value]}}</td>
+                    </ng-container>
+                </ng-container>
+                <td class="d-flex">
+                    <button *ngIf="showButtonEdit" data-backdrop="static" data-keyboard="false" data-toggle="modal"
+                        data-target="#modalDados" (click)="edit(item)" class="btn btn-warning mr-1 shadow button--icon">
+                        <fa-icon [icon]="icons.faEdit"></fa-icon>
+                    </button>
+                    <button *ngIf="showButtonRemove" data-backdrop="static" data-keyboard="false" data-toggle="modal"
+                        data-target="#modalDados" (click)="remove(item)" class="btn btn-danger shadow button--icon">
+                        <fa-icon [icon]="icons.faTrashAlt"></fa-icon>
+                    </button>
+                    <button *ngIf="showButtonCopy" (click)="copy(item)" class="btn btn-info shadow button--icon">
+                        <fa-icon [icon]="icons.faCopy"></fa-icon>
+                    </button>
+                    <button *ngIf="showButtonStatus" (click)="status(item)" class="btn btn-info shadow button--icon">
+                        <fa-icon *ngIf="item['status'] === true" [icon]="icons.faUser"></fa-icon>
+                        <fa-icon *ngIf="item['status'] === false" [icon]="icons.faUserSlash"></fa-icon>
+                    </button>
+                    <button *ngIf="showButtonNotification" (click)="notification(item)"
+                        class="btn btn-dark shadow button--icon" data-backdrop="static" data-keyboard="false"
+                        data-toggle="modal" data-target="#modalNotification">
+                        <fa-icon [icon]="icons.faBell"></fa-icon>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <pagination-controls [maxSize]="maxSize" [directionLinks]="directionLinks" [autoHide]="autoHide"
+        [responsive]="responsive" [previousLabel]="labels.previousLabel" [nextLabel]="labels.nextLabel"
+        [screenReaderPaginationLabel]="labels.screenReaderPaginationLabel"
+        [screenReaderPageLabel]="labels.screenReaderPageLabel"
+        [screenReaderCurrentLabel]="labels.screenReaderCurrentLabel" (pageChange)="onPageChange($event)">
+    </pagination-controls>
+
+</div>

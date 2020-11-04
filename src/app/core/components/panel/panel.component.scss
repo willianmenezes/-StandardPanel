@@ -1,7 +1,11 @@
-@import '../../../../customize-bootstrap.scss';
-@import 'node_modules/bootstrap/scss/bootstrap';
+@import "../../../../customize-bootstrap.scss";
+@import "node_modules/bootstrap/scss/bootstrap";
 
-$color-primary: theme-color("primary");
+$color-info: theme-color("primary");
+
+.container-panel {
+    
+}
 
 a,
 a:hover,
@@ -9,6 +13,12 @@ a:focus {
     color: inherit;
     text-decoration: none;
     transition: all 0.3s;
+}
+
+//icon-side-bar
+#sidebarCollapse,
+.navbar-toggler-icon {
+    background-color: $color-info;
 }
 
 /* Side bar */
@@ -21,7 +31,7 @@ a:focus {
 #sidebar {
     min-width: 250px;
     max-width: 250px;
-    background: $color-primary;
+    background: $color-info;
     color: #fff;
     transition: all 0.3s;
 }
@@ -29,14 +39,22 @@ a:focus {
 #sidebar.active {
     margin-left: -250px;
 }
+#sidebar .sidebar-header,
+.navbar {
+    background: $color-info;
+}
+
 #sidebar .sidebar-header {
     padding: 20px;
-    background: $color-primary;
+}
+
+.navbar {
+    padding: 8px;
 }
 
 #sidebar ul.components {
     padding: 0px 0;
-    border-bottom: 1px solid #47748b;
+    border-bottom: 1px solid $color-info;
 }
 
 #sidebar ul p {
@@ -49,15 +67,19 @@ a:focus {
     display: block;
 }
 
+#sidebar ul li a {
+    padding-left: 20px;
+}
+
 #sidebar ul li a:hover {
-    color: $color-primary;
+    color: $color-info;
     background: #fff;
 }
 
-#sidebar ul li.active>a,
+#sidebar ul li.active > a,
 a[aria-expanded="true"] {
     color: #fff;
-    background: $color-primary;
+    background: $color-info;
 }
 
 a[data-toggle="collapse"] {
@@ -75,7 +97,7 @@ a[data-toggle="collapse"] {
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: theme-color("primary");
+    background: $color-info;
 }
 
 /* Content style */
@@ -87,17 +109,28 @@ ul ul a {
     transition: all 0.3s;
 }
 
-#sidebarCollapse{
+#sidebarCollapse {
     border: 0 !important;
 }
 
-.navbar-toggler-icon{
+.navbar-toggler-icon {
     display: block !important;
 }
 
+.brand--logo {
+    cursor: pointer;
+}
+
+hr {
+    background-color: #fff !important;
+    margin: 0 10px;
+}
+
+.logout {
+    cursor: pointer;
+}
 /* Media queries */
 @media (max-width: 768px) {
-   
     #sidebar {
         margin-left: -250px;
     }
@@ -107,4 +140,41 @@ ul ul a {
     #sidebarCollapse span {
         display: none;
     }
+}
+
+//menu humbuerguer
+.ham {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 400ms;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.hamRotate.active {
+    transform: rotate(45deg);
+}
+.hamRotate180.active {
+    transform: rotate(180deg);
+}
+.line {
+    fill: none;
+    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+    stroke: #000;
+    stroke-width: 5.5;
+    stroke-linecap: round;
+}
+
+.ham2 .top {
+    stroke-dasharray: 40 121;
+}
+.ham2 .bottom {
+    stroke-dasharray: 40 121;
+}
+.ham2.active .top {
+    stroke-dashoffset: -102px;
+}
+.ham2.active .bottom {
+    stroke-dashoffset: -102px;
 }

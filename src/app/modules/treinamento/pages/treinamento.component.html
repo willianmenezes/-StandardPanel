@@ -1,0 +1,39 @@
+<h3>
+    Treinamentos
+</h3>
+<hr />
+
+<!-- <app-table-paginated [showButtonRemove]="false" [tableLabel]="label" [tableData]="tableValues"
+    [showButtonNotification]="false" (editData)="editEventEmitter($event)" (removeData)="removeEventEmitter($event)"
+    (viewData)="showEventEmitter($event)">
+</app-table-paginated> -->
+
+<!-- Inicio Editar dados do modal -->
+<div class="modal fade" id="modalDados" tabindex="-1" role="dialog" aria-labelledby="modalDadosTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">{{modalTitle}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary">{{buttonActionName}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <app-card [classColorCard]="'border-left-primary'">
+    teste
+</app-card>
+
+<app-card-title [classColorCard]="'border-left-primary'">
+    <div title>teste title</div>
+    <div body>teste body</div>
+</app-card-title> -->

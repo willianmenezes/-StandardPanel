@@ -1,13 +1,10 @@
 $theme-colors: (
-  "primary": #2B3A67,
-  "info": #3E92CC,
+  "primary": #502594,
+  "info": #0086ca,
   "danger": #B20D30,
-  "warning": #FDCA40,
-  "success": #16C172,
+  "warning": #febb3c,
+  "success": #00dfa3,
+  "secondary": #858796,
+  "light": #f8f9fc,
+  "dark": #5a5c69
 );
-
-$enable-rounded: false;
-
-.card {
-  border-radius: 0;
-}
